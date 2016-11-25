@@ -1,4 +1,57 @@
 @import 'normalize';
 @import 'css3-mixins';
 
-/*! Begin custom css */ 
+$menu-height: 80px;
+
+/*! Begin custom css */
+
+p {
+  font: 18px 'Open Sans', sans-serif;
+  color: #333;
+}
+
+.ts-menu {
+  position: fixed;
+  width: 100%;
+  height: $menu-height;
+  z-index: 500;
+  padding: 0 0.5em;
+  font: 42px 'Lato', sans-serif;
+  color: #eee;
+  line-height: $menu-height;
+  box-sizing: border-box;
+  .ts-brand {
+    float: left;
+  }
+  ul {
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-left: 1em;
+    }
+  }
+}
+
+.ts-slide-primary {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 100%;
+  padding-top: $menu-height;
+  background: rgb(90, 157, 227);
+  text-align: center;
+  @include transition();
+  &.ts-active {
+    left: 0;
+  }
+}
+
+.ts-callout {
+  display: inline-block;
+  background: #eee;
+  padding: 1em 2em;
+}
