@@ -1,15 +1,29 @@
 {
-  "name": "niftyws",
+  "name": "portfolio",
   "version": "0.1.0",
-  "description": "Nifty Web Services portfolio",
+  "description": "My portfolio",
   "author": "Tristan Shelton",
   "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "watch": "run-p watch:*",
+    "watch:server": "nodemon index.js",
+    "watch:css": "nodemon -w \"style/main.scss\" -x \"npm run build:css\"",
+    "watch:js": "nodemon -w \"script/main.js\" -x \"npm run build:js\"",
+    "build:css": "node-sass --include-path node_modules/normalize.css --include-path style --output-style compressed style/main.scss public/css/style.css",
+    "build:js": "browserify script/main.js | minify --js > public/js/script.js"
   },
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "normalize.css": "*",
+    "pug": "^2.0.0-beta5"
+  },
+  "devDependencies": {
+    "minify": "^2.0.11",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.10.2",
+    "npm-run-all": "^3.0.0"
   },
   "engines": {
     "node": "6.9.1"
