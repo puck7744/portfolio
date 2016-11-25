@@ -1,0 +1,21 @@
+{
+  "name": "niftyws",
+  "version": "0.1.0",
+  "description": "Nifty Web Services portfolio",
+  "author": "Tristan Shelton",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "engines": {
+    "node": "6.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puck7744/niftyws"
+  }
+}
