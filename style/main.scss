@@ -16,12 +16,16 @@ p {
   height: $menu-height;
   z-index: 500;
   padding: 0 0.5em;
-  font: 42px 'Lato', sans-serif;
-  color: #eee;
+  font: 30px 'Lato', sans-serif;
+  color: #222;
   line-height: $menu-height;
   box-sizing: border-box;
   .ts-brand {
     float: left;
+    font-size: 42px;
+    span {
+      font-weight: 700;
+    }
   }
   ul {
     list-style: none;
@@ -31,20 +35,43 @@ p {
     li {
       display: inline-block;
       margin-left: 1em;
+      a {
+        color: #222;
+        text-decoration: none;
+        &:after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 2px;
+          margin: -20px auto;
+          background: #222;
+          @include transition('all 0.08s ease-out');
+        }
+        &:hover:after {
+          width: 100%;
+        }
+      }
     }
   }
 }
 
 .ts-slide-primary {
+  display: table;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 100%;
   width: 100%;
-  padding-top: $menu-height;
-  background: rgb(90, 157, 227);
+  height: 100%;
+  background: rgb(182, 218, 255);
   text-align: center;
   @include transition();
+  .ts-slide-content {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    padding-top: $menu-height;
+  }
   &.ts-active {
     left: 0;
   }
