@@ -10,22 +10,28 @@ p {
   color: #333;
 }
 
+.lato {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+.lato-bold {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
 .ts-menu {
   position: fixed;
   width: 100%;
   height: $menu-height;
   z-index: 500;
   padding: 0 0.5em;
-  font: 30px 'Lato', sans-serif;
+  font-size: 30px;
   color: #222;
   line-height: $menu-height;
   box-sizing: border-box;
   .ts-brand {
     float: left;
     font-size: 42px;
-    span {
-      font-weight: 700;
-    }
   }
   ul {
     list-style: none;
@@ -63,14 +69,12 @@ p {
   left: 100%;
   width: 100%;
   height: 100%;
-  background: rgb(182, 218, 255);
   text-align: center;
   @include transition();
   .ts-slide-content {
     display: table-cell;
-    height: 100%;
     vertical-align: middle;
-    padding-top: $menu-height;
+    //padding-top: $menu-height;
   }
   &.ts-active {
     left: 0;
@@ -81,4 +85,25 @@ p {
   display: inline-block;
   background: #eee;
   padding: 1em 2em;
+}
+
+#home-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #b6daff;
+}
+
+.ts-home-callout {
+  display: inline-block;
+  text-align: left;
+  font-size: 56px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 20px 40px;
+  small {
+    font-size: 24px;
+  }
 }

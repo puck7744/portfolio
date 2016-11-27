@@ -6,14 +6,19 @@ html(lang="en")
   body
     div.ts-menu
       div.ts-brand
-        span Tristan Shelton
-        small &nbsp;&lt;developer&gt;
-      ul
+        span.lato-bold Tristan Shelton
+        span.lato: small &nbsp;&lt;developer&gt;
+      ul.lato
         li: a(href='#') Home
         li: a(href='#') About
         li: a(href='#') Work
         li: a(href='#') Contact
     div.ts-slide-primary.ts-active
+      div#home-hero
       div.ts-slide-content
-        div.ts-callout
-          p Hello template world!
+        div.ts-home-callout.lato
+          span DIGITAL
+          span.lato-bold &nbsp;FREEDOM
+          br
+          span: small Expertise to turn awesome ideas into elegant code
+    script(src='/js/script.js')

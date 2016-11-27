@@ -15,9 +15,11 @@
     "build:js": "browserify script/main.js | minify --js > public/js/script.js"
   },
   "dependencies": {
-    "express": "^4.14.0",
+    "express": "~4.14.0",
+    "pug": "^2.0.0-beta5",
     "normalize.css": "*",
-    "pug": "^2.0.0-beta5"
+    "three-js": "~79.0.0",
+    "browsernizr": "*"
   },
   "devDependencies": {
     "minify": "^2.0.11",
