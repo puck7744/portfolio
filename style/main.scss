@@ -32,6 +32,11 @@ p {
   .ts-brand {
     float: left;
     font-size: 42px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    small {
+      font-weight: 300;
+    }
   }
   ul {
     list-style: none;
@@ -101,7 +106,7 @@ p {
   display: inline-block;
   text-align: left;
   font-size: 56px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.5);
   padding: 20px 40px;
   small {
     font-size: 24px;
