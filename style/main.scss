@@ -26,7 +26,7 @@ p {
   z-index: 500;
   padding: 0 0.5em;
   font-size: 30px;
-  color: #222;
+  color: #eee;
   line-height: $menu-height;
   box-sizing: border-box;
   .ts-brand {
@@ -47,7 +47,7 @@ p {
       display: inline-block;
       margin-left: 1em;
       a {
-        color: #222;
+        color: inherit;
         text-decoration: none;
         &:after {
           content: '';
@@ -55,7 +55,7 @@ p {
           width: 0;
           height: 2px;
           margin: -20px auto;
-          background: #222;
+          background: #eee;
           @include transition('all 0.08s ease-out');
         }
         &:hover:after {
@@ -99,7 +99,7 @@ p {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background: #b6daff;
+  @include background-gradient(#1e4877, #4584b4);
 }
 
 .ts-home-callout {
