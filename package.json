@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "My portfolio",
   "author": "Tristan Shelton",
   "license": "Apache-2.0",
@@ -12,7 +12,7 @@
     "watch:css": "nodemon -w style/ -e css,scss -x \"npm run build:css\"",
     "watch:js": "nodemon -w script/ -e js -x \"npm run build:js\"",
     "build:css": "node-sass --include-path node_modules/normalize.css --include-path style --output-style compressed style/main.scss public/css/style.css",
-    "build:js": "cd script && browserify main.js -o ../public/js/script.js"
+    "build:js": "cd script && browserify main.js | minify --js > ../public/js/script.js"
   },
   "dependencies": {
     "express": "~4.14.0",
