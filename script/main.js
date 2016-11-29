@@ -135,3 +135,4 @@ function onWindowResize() {
 
 init();
 animate();
+window.scrollTo(0,1);

@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "My portfolio",
   "author": "Tristan Shelton",
   "license": "Apache-2.0",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "express": "~4.14.0",
+    "serve-favicon": "*",
     "pug": "^2.0.0-beta5",
     "normalize.css": "*",
     "three-js": "~79.0.0",
