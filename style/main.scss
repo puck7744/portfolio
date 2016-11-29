@@ -99,7 +99,7 @@ p {
   right: 0;
   bottom: 0;
   z-index: -1;
-  @include background-gradient(#1e4877, #64a1cf);
+  background: #3590D9 url(../img/clouds-from-a-plane.jpg);
 }
 
 .ts-home-callout {

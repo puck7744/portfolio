@@ -25,11 +25,11 @@ function init() {
     boid = boids[i] = new Boid();
 
     boid.position.x = Math.random() * 400 - 200;
-    boid.position.y = Math.random() * 400 - 200;
+    boid.position.y = -400;
     boid.position.z = Math.random() * 400 - 200;
 
     boid.velocity.x = 1;
-    boid.velocity.y = 0;
+    boid.velocity.y = 1;
     boid.velocity.z = 0;
 
     boid.setAvoidWalls(true);
@@ -41,7 +41,7 @@ function init() {
     scene.add(bird);
   }
 
-  scene.fog = new THREE.Fog(0x4584b4, 200, 1500);
+  scene.fog = new THREE.Fog(0x3590D9, 200, 1500);
 
   var texture = (new THREE.TextureLoader()).load('/img/cloud.png', null, animate);
   texture.magFilter = THREE.LinearMipMapLinearFilter;
@@ -50,6 +50,7 @@ function init() {
   var cloudmat = new THREE.MeshBasicMaterial({
     map: texture,
     transparent: true,
+    opacity: 0.8,
     depthWrite: false,
     depthTest: true
   });
@@ -110,7 +111,7 @@ function animate() {
     lastTime = currentTime;
   }
 
-  clouds.position.z = 500 + currentTime*0.03 % 1000;
+  clouds.position.z = 500 + currentTime*0.01 % 1000;
 
   renderer.render(scene, camera);
 
