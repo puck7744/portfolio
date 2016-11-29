@@ -58,11 +58,11 @@ function init() {
   var plane = new THREE.Mesh(new THREE.PlaneGeometry(64, 64));
 
   for (var i = 0; i < 1000; i++) {
-    plane.position.x = Math.random() * 2000 - 1000;
+    plane.position.x = Math.random() * 2500 - 1250;
     plane.position.y = - Math.random() * Math.random() * 100 - 100;
     plane.position.z = -2000 + i;
     plane.rotation.z = Math.random()*Math.sign(Math.random()-0.5);
-    plane.scale.x = plane.scale.y = Math.random() * Math.random() * 1.5 + 1.0;
+    plane.scale.x = plane.scale.y = Math.random() * Math.random() * 1.5 + 1.5;
     plane.updateMatrix();
 
     chunk.merge(plane.geometry, plane.matrix);
