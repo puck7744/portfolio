@@ -19,3 +19,4 @@ Here I should cover the technology I used, why I chose it and any notable usage 
 
 * MrDoob and the Three.js contributors
 * Dan Uznanski for contributions to the bird behavior
+* Petr Kratochvil for the background image of clouds in the sky

@@ -24,13 +24,14 @@ p {
   width: 100%;
   height: $menu-height;
   z-index: 500;
-  padding: 0 0.5em;
   font-size: 30px;
   color: #eee;
   line-height: $menu-height;
   box-sizing: border-box;
   .ts-brand {
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 0.5em;
     font-size: 42px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
@@ -39,8 +40,10 @@ p {
     }
   }
   ul {
+    position: absolute;
+    top: 0;
+    right: 0.5em;
     list-style: none;
-    float: right;
     margin: 0;
     padding: 0;
     li {
@@ -100,6 +103,7 @@ p {
   bottom: 0;
   z-index: -1;
   background: #3590D9 url(../img/clouds-from-a-plane.jpg);
+  background-size: cover;
 }
 
 .ts-home-callout {
@@ -111,5 +115,11 @@ p {
   margin-bottom: 8%;
   small {
     font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ts-menu .ts-brand small {
+    display: none;
   }
 }
