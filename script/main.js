@@ -51,7 +51,7 @@ function init() {
     map: texture,
     transparent: true,
     depthWrite: false,
-    depthTest: false
+    depthTest: true
   });
 
   var chunk = new THREE.Geometry();
