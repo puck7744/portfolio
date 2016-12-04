@@ -39,7 +39,7 @@ function init3D() {
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 2000);
   camera.position.z = 500;
 
-  scene.fog = new THREE.Fog(0x3590D9, 200, 1500);
+  scene.fog = new THREE.Fog(0x64A0D8, 200, 1500);
 
   /*
     Prepare the bird flock; birds are the graphical representation of the boids

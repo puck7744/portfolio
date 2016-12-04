@@ -13,10 +13,13 @@ Here I should cover the technology I used, why I chose it and any notable usage 
 * NPM
 * Browserify
 * Nodemon/NPM scripts
+* Heroku
+* Git
+* Progressive Enhancement
 
 
 # Credits
 
 * MrDoob and the Three.js contributors
-* Dan Uznanski for contributions to the bird behavior
-* Petr Kratochvil for the background image of clouds in the sky
+* Dan Uznanski for contributions to bird behavior
+* Wikipedia user Kenrick95 for the background image of clouds over London
