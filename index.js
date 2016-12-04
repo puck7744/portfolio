@@ -8,8 +8,8 @@ app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
 app.use(favicon('public/favicon.ico'));
 
-app.get('*', function(request, response) {
-  response.render('index');
+app.get(['/', '/:page'], function(request, response) {
+  response.render('index', { page: request.params.page||'home' });
 })
 
 app.listen(app.get('port'));

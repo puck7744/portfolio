@@ -1,5 +1,6 @@
 require('browsernizr/test/webgl');
 var Modernizr = require('browsernizr');
+var _ = require('lodash/core');
 var THREE = require('three-js')();
 var Bird = require('./bird.js');
 var Boid = require('./boid.js');
@@ -10,7 +11,20 @@ var bird, birds, boid, boids, clouds;
 
 function init() {
   window.scrollTo(0,1); // Attempt to hide the address bar in mobile browsers
-  
+
+  var links = document.querySelectorAll('.ts-nav a');
+  _.forEach(links, function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var slides = document.querySelectorAll('.ts-slide');
+      _.forEach(slides, function(slide) {
+        if (slide.id == link.textContent.toLowerCase()) slide.classList.add('ts-slide-active');
+        else slide.classList.remove('ts-slide-active');
+      });
+    });
+  });
+
   init3D();
 }
 
@@ -34,7 +48,7 @@ function init3D() {
   birds = [];
   boids = [];
   birdmat = new THREE.MeshBasicMaterial( { color: 0x333333, side: THREE.DoubleSide, } );
-  for ( var i = 0; i < 75; i ++ ) {
+  for (var i = 0; i < 75; i++) {
     boid = boids[i] = new Boid();
 
     // Create a block of birds below the cloud line

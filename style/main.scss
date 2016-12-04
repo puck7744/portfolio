@@ -1,15 +1,18 @@
 @import 'normalize';
 @import 'css3-mixins';
 
-$menu-height: 80px;
-
 /*! Begin custom css */
+//Stylesheet variables
+$menu-height: 100px;
+$responsive-break: 1024px;
 
+//Set a general style for long form text
 p {
   font: 18px 'Open Sans', sans-serif;
   color: #333;
 }
 
+//Classes for headers and callouts
 .lato {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -19,48 +22,60 @@ p {
   font-weight: 700;
 }
 
+//Main menu styles
 .ts-menu {
   position: fixed;
   width: 100%;
   height: $menu-height;
   z-index: 500;
-  font-size: 30px;
   color: #eee;
   line-height: $menu-height;
-  box-sizing: border-box;
+  font-size: 30px;
+
+  //Name heading
   .ts-brand {
     position: absolute;
     top: 0;
-    left: 0.5em;
+    left: 1em;
     font-size: 42px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
+
     small {
+      font-size: 30px;
       font-weight: 300;
     }
   }
+
+  //Navigation links
   ul {
     position: absolute;
     top: 0;
-    right: 0.5em;
+    right: 2em;
     list-style: none;
     margin: 0;
     padding: 0;
+
     li {
       display: inline-block;
-      margin-left: 1em;
+      margin-left: 1.5em;
+
       a {
+        font-size: 28px;
         color: inherit;
         text-decoration: none;
+        font-family: 'Open Sans', sans-serif;
+
         &:after {
           content: '';
           display: block;
           width: 0;
           height: 2px;
-          margin: -20px auto;
+          margin: -1em auto;
           background: #eee;
           @include transition('all 0.08s ease-out');
         }
+
         &:hover:after {
           width: 100%;
         }
@@ -69,30 +84,39 @@ p {
   }
 }
 
-.ts-slide-primary {
-  display: table;
+//Individual "pages"
+.ts-slide {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 100%;
+  left: 0;
   width: 100%;
   height: 100%;
-  text-align: center;
+  opacity: 0;
   @include transition();
-  .ts-slide-content {
-    display: table-cell;
-    vertical-align: middle;
-    //padding-top: $menu-height;
-  }
-  &.ts-active {
-    left: 0;
-  }
-}
 
-.ts-callout {
-  display: inline-block;
-  background: #eee;
-  padding: 1em 2em;
+    &.ts-slide-active {
+      opacity: 1;
+      z-index: 100;
+    }
+
+  .ts-slide-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $menu-height;
+    background: #333;
+  }
+
+  .ts-slide-content {
+    position: absolute;
+    top: $menu-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
 }
 
 #home-hero {
@@ -107,19 +131,35 @@ p {
 }
 
 .ts-home-callout {
-  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translateX(-50%) translateY(-110%));
   text-align: left;
   font-size: 56px;
   background: rgba(255, 255, 255, 0.5);
   padding: 20px 40px;
-  margin-bottom: 8%;
   small {
     font-size: 24px;
+    white-space: nowrap;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .ts-menu .ts-brand small {
-    display: none;
+  .ts-menu {
+    .ts-brand {
+      font-size: 34px;
+      left: 1em;
+
+      small {
+        display: none;
+      }
+    }
+    ul {
+      right: 1em;
+      li {
+        margin-left: 0.8em;
+      }
+    }
   }
 }
