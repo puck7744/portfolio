@@ -9,6 +9,16 @@ var scene, camera, renderer;
 var geometry, material, mesh;
 var bird, birds, boid, boids, clouds;
 
+function loadPage(page, history) {
+  _.forEach(document.querySelectorAll('.ts-slide'), function(slide) {
+    if (slide.id == page) slide.classList.add('ts-slide-active');
+    else slide.classList.remove('ts-slide-active');
+  });
+
+  if (history || history === undefined)
+    window.history.pushState({ 'page': page }, "", page);
+}
+
 function init() {
   window.scrollTo(0,1); // Attempt to hide the address bar in mobile browsers
 
@@ -17,12 +27,13 @@ function init() {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      var slides = document.querySelectorAll('.ts-slide');
-      _.forEach(slides, function(slide) {
-        if (slide.id == link.textContent.toLowerCase()) slide.classList.add('ts-slide-active');
-        else slide.classList.remove('ts-slide-active');
-      });
+
+      loadPage(link.textContent.toLowerCase());
     });
+  });
+
+  window.addEventListener('popstate', function(e) {
+    loadPage(e.state.page, false);
   });
 
   init3D();
