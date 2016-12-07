@@ -10,18 +10,24 @@ var geometry, material, mesh;
 var bird, birds, boid, boids, clouds;
 
 function loadPage(page, history) {
+  // Find and activate the correct slide using CSS
   _.forEach(document.querySelectorAll('.ts-slide'), function(slide) {
     if (slide.id == page) slide.classList.add('ts-slide-active');
     else slide.classList.remove('ts-slide-active');
   });
 
+  // Push a new history state on Javascript enabled browsers by default
   if (history || history === undefined)
     window.history.pushState({ 'page': page }, "", page);
+
+  // Resume WebGL animation when switching back to home
+  if (page == 'home') animate();
 }
 
 function init() {
   window.scrollTo(0,1); // Attempt to hide the address bar in mobile browsers
 
+  // Enable Javascript navigation
   var links = document.querySelectorAll('.ts-nav a');
   _.forEach(links, function(link) {
     link.addEventListener('click', function(e) {
@@ -32,10 +38,12 @@ function init() {
     });
   });
 
+  // Enable history API hook
   window.addEventListener('popstate', function(e) {
     loadPage(e.state.page, false);
   });
 
+  // Prepare home page animation
   init3D();
 }
 
@@ -183,7 +191,9 @@ function animate() {
 
   renderer.render(scene, camera);
 
-  requestAnimationFrame(animate);
+  // Continue animating only if the home page is active for better performance
+  if (document.getElementById('home').classList.contains('ts-slide-active'))
+    requestAnimationFrame(animate);
 }
 
 function onDocumentMouseMove( event ) {
