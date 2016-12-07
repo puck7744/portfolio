@@ -39,3 +39,6 @@ jspm_packages
 # Heroku recommended
 .DS_Store
 /*.env
+
+# Custom additions
+src/
