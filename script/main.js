@@ -16,6 +16,14 @@ function loadPage(page, history) {
     else slide.classList.remove('ts-slide-active');
   });
 
+  _.forEach(document.querySelectorAll('.ts-nav a'), function(link) {
+    if (link.textContent.toLowerCase() == page) link.classList.add('ts-nav-active');
+    else link.classList.remove('ts-nav-active');
+  });
+
+  // Clear hash to trigger reflow of :target selectors
+  window.location.hash = '';
+
   // Push a new history state on Javascript enabled browsers by default
   if (history || history === undefined)
     window.history.pushState({ 'page': page }, "", page);
@@ -96,7 +104,7 @@ function init3D() {
 
   // --Set up clouds--
   // First load the texture
-  var texture = (new THREE.TextureLoader()).load('/img/cloud.png', null, animate);
+  var texture = (new THREE.TextureLoader()).load('/img/home/cloud.png', null, animate);
   texture.magFilter = THREE.LinearMipMapLinearFilter;
   texture.minFilter = THREE.LinearMipMapLinearFilter;
 
