@@ -17,7 +17,7 @@ html(lang="en")
     div#home.ts-slide(class={ 'ts-slide-active': page == 'home' })
       div#home-hero
       div.ts-slide-content
-        div.ts-home-callout.lato
+        div.ts-callout-home.lato
           span DIGITAL
           span.lato-bold &nbsp;FREEDOM
           br
@@ -37,14 +37,15 @@ html(lang="en")
     div#work.ts-slide(class={ 'ts-slide-active': page == 'work' })
       div.ts-slide-navbar
       div.ts-slide-content.ts-work-splash
-        div.ts-home-callout.lato
+        div.ts-callout-dark.lato
           span CREATIVE
           span.lato-bold &nbsp;SOLUTIONS
           br
           small
             span A diverse skillset and trademark adaptability.
             br
-            a(href='#browse') See it in action
+            br
+            a(href='#browse') See them in action
       each content, id in work
         div.ts-work-content(id=id)
           div.ts-work-visual

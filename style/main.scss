@@ -169,19 +169,34 @@ p {
   background-size: cover;
 }
 
-.ts-home-callout {
+.ts-callout-light, .ts-callout-dark, .ts-callout-home {
   position: absolute;
   top: 50%;
   left: 50%;
-  @include transform(translateX(-50%) translateY(-110%));
+  @include transform(translateX(-50%) translateY(-50%));
   text-align: left;
   font-size: 56px;
+  color: $black;
   background: rgba(255, 255, 255, 0.5);
   padding: 20px 40px;
+
   small {
     font-size: 24px;
     white-space: nowrap;
   }
+}
+
+.ts-callout-dark {
+  color: $white;
+  background: rgba(0, 0, 0, 0.5);
+  //background: transparent;
+  a {
+    color: $highlight;
+  }
+}
+
+.ts-callout-home {
+  @include transform(translateX(-50%) translateY(-110%));
 }
 
 // Work page
