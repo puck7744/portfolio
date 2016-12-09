@@ -8,6 +8,7 @@ var fs = require('fs');
 var path = require('path');
 
 var app = express();
+var field = form.field;
 
 app.set('port', (process.env.PORT || 5000));
 app.set('views', 'views');
