@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "My portfolio",
   "author": "Tristan Shelton",
   "license": "Apache-2.0",
@@ -20,6 +20,8 @@
     "pug": "^2.0.0-beta5",
     "marked": "*",
     "lodash": "*",
+    "express-form": "*",
+    "sendmail": "~1.1.1",
     "normalize.css": "*",
     "three-js": "~79.0.0",
     "browsernizr": "*"
