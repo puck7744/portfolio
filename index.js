@@ -14,13 +14,16 @@ app.use(favicon('public/favicon.ico'));
 
 app.get(['/', '/:page'], function(request, response) {
   var workEntries = {};
-  fs.readdirSync('views/work/content').forEach((file) => {
-    workEntries[path.basename(file, path.extname(file))] = marked(fs.readFileSync('views/work/content/'+file, 'utf8'));
+  fs.readdirSync('content/work').forEach((file) => {
+    workEntries[path.basename(file, path.extname(file))] = marked(fs.readFileSync('content/work/'+file, 'utf8'));
   });
 
   response.render('index', {
     page: request.params.page||'home',
-    work: workEntries
+    content: {
+      about: marked(fs.readFileSync('content/about/index.md', 'utf8')),
+      work: workEntries
+    }
   });
 })
 

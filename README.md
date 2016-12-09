@@ -22,4 +22,5 @@ Here I should cover the technology I used, why I chose it and any notable usage 
 
 * MrDoob and the Three.js contributors
 * Dan Uznanski for contributions to bird behavior
-* Wikipedia user Kenrick95 for the background image of clouds over London
+* Wikipedia user Kenrick95 for the image of clouds over London
+* Unsplash user Helloquence for the image of people collaborating
