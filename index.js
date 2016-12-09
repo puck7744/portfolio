@@ -30,7 +30,7 @@ app.post(
   function(request, response) {
     if (request.form.isValid) {
       sendmail({
-        from: `${request.form.name} <${request.form.email}>`,
+        from: `"${request.form.name}" <${request.form.email}>`,
         to: 'niftyws@gmail.com',
         subject: 'Portfolio contact from '+request.form.name,
         html: request.form.message,
