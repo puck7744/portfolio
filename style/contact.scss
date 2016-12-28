@@ -1,0 +1,62 @@
+#contact {
+  background: url(../img/contact.jpg) no-repeat;
+  background-size: cover;
+}
+
+.ts-contact-form {
+  width: 700px;
+  margin: 4em;
+  padding: 2em;
+  background: $background;
+  overflow: auto;
+  @include border-radius();
+  @include box-shadow();
+
+  h1, p {
+    @extend .open-sans;
+  }
+
+  label {
+    display: none;
+  }
+
+  .ts-contact-fields, input[type=text] {
+    border: 2px solid darken($background, 20%);
+  }
+
+  input[type=text], input[type=submit], textarea {
+    @extend .open-sans;
+    border-width: 0;
+  }
+
+  input[type=text], textarea {
+    width: 100%;
+    padding: 0.8em;
+    border-bottom: 2px solid darken($background, 20%);
+    background: $background;
+    &:focus {
+      background: $white;
+    }
+  }
+
+  textarea {
+    height: 8em;
+    line-height: 1.2em;
+    border-bottom: none;
+    resize: vertical;
+  }
+
+  input[type=submit] {
+    float: right;
+    background: $highlight;
+    color: $black;
+    margin-top: 1.2em;
+    padding: 0.8em 2em;
+    font-weight: 600;
+    @include border-radius();
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

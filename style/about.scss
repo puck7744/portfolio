@@ -1,0 +1,27 @@
+#about {
+  background: url(../img/work/splash.jpg) no-repeat;
+  background-size: cover;
+}
+
+.ts-callout-about {
+  @extend .ts-callout;
+  @extend .montserrat;
+  color: $white;
+  font-size: 50px;
+
+  span {
+    white-space: nowrap;
+  }
+}
+
+.ts-page-bottom {
+  position: fixed;
+  top: $menu-height * 2;
+  bottom: 0;
+  left: 50%;
+  width: 800px;
+  padding: 1em 2em;
+  @include transform(translateX(-50%));
+  background: $background;
+  overflow: auto;
+}

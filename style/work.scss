@@ -1,0 +1,124 @@
+#work {
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $menu-height;
+    background: $primary;
+  }
+}
+
+.ts-work-visual, .ts-work-info, .ts-work-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.ts-work-visual {
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
+.ts-work-info {
+  left: 50%;
+  width: 50%;
+  padding: 5em 3em 3em;
+  background: $white;
+
+  h1 {
+    margin-top: 0;
+  }
+  p, ul {
+    width: 420px;
+    box-sizing: border-box;
+  }
+}
+
+.ts-work-nav {
+  top: $menu-height;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background: $background;
+
+  ul {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+
+    li {
+      position: relative;
+      display: inline-block;
+      list-style: none;
+      width: 21%;
+      margin: 2%;
+      @include border-radius(1em);
+      @include box-shadow();
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+
+      span {
+        display: block;
+        position: absolute;
+        bottom: -100%;
+        width: 100%;
+        padding: 12px;
+        background: $black;
+        color: $white;
+        text-align: center;
+      }
+      &:hover span {
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.ts-work-content {
+  position: fixed;
+  top: $menu-height;
+  left: 100%;
+  right: auto;
+  width: 100%;
+  bottom: 0;
+  z-index: 50;
+
+  &:target {
+    left: 0;
+    z-index: 60;
+  }
+
+  a {
+    color: $primary;
+  }
+
+  .ts-work-subnav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    color: $white;
+    background: $black;
+
+    ul {
+      @extend .horizontal-navigation;
+      li {
+        color: $white;
+        padding: 0.8em;
+      }
+    }
+  }
+}

@@ -22,55 +22,46 @@ html(lang="en")
           span &nbsp;FREEDOM
           br
           span: small Expertise to turn exceptional ideas into elegant code
+          br
+          small: a.ts-action-button(href='/work') CHECK OUT SOME OF MY WORK &rarr;
 
     div#about.ts-slide(class={ 'ts-slide-active': page == 'about' })
-      div.ts-slide-navbar
       div.ts-slide-content
-        != content.about
+        div.ts-callout-about
+          span A diverse skillset for building
+          br
+          span interactive experiences.
+          br
+          small: a.ts-action-button(href='#more') LEARN MORE &rarr;
+        div#more.ts-page-bottom!= content.about
 
     div#work.ts-slide(class={ 'ts-slide-active': page == 'work' })
-      div.ts-slide-navbar
-      div.ts-slide-content.ts-work-splash
-        //div.ts-callout-dark
-          span CREATIVE
-          span &nbsp;SOLUTIONS
-          br
-          small
-            span A diverse skillset and trademark adaptability.
-            br
-            br
-            a(href='#browse') See them in action &rarr;
-        //div.ts-callout-work
-          span CREATIVE
-          span &nbsp;SOLUTIONS
-          br
-          span: small A diverse skillset and trademark adaptability.
-          br
-          small: a(href='#browse') Learn more &rarr;
+      div.ts-slide-content
         div.ts-callout-work
           span A diverse skillset for building
           br
           span interactive experiences.
           br
-          small: a.ts-action-button(href='#browse') CHECK OUT SOME OF MY WORK &rarr;
+          small: a.ts-action-button(href='#browse') LEARN MORE &rarr;
       each blurb, id in content.work
         div.ts-work-content(id=id)
           div.ts-work-visual
             img(src=`/img/work/full/${id}.jpg`)
           div.ts-work-info
+            div.ts-work-subnav
+              ul
+                li: a(href='#wendy-kagan') &larr; Previous
+                li: a(href='#browse') &uarr; Gallery
+                li: a(href='#something-fabulous') Next &rarr;
             != blurb
-          div.ts-work-subnav
-            ul
-              li: a(href='#wendy-kagan') &larr; Previous
-              li: a(href='#browse') &uarr; Gallery
-              li: a(href='#something-fabulous') Next &rarr;
       div.ts-work-nav#browse
         ul
           each blurb, id in content.work
-            li: a(href='#'+id): img(src=`/img/work/thumb/${id}.jpg`)
+            li: a(href='#'+id)
+              img(src=`/img/work/thumb/${id}.jpg`)
+              span= id.replace(/-/g, ' ').replace(/\w+\s*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); })
 
     div#contact.ts-slide(class={ 'ts-slide-active': page == 'contact' })
-      div.ts-slide-navbar
       div.ts-slide-content
         form.ts-contact-form(method='POST', action='/contact/send')
           h1 Contact me
