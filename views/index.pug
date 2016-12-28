@@ -1,7 +1,7 @@
 html(lang="en")
   head
     title Portfolio
-    link(href='https://fonts.googleapis.com/css?family=Lato:300,700|Open+Sans:300,600', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Lato:300,700|Open+Sans:300,600|Montserrat:700', rel='stylesheet')
     link(href='/css/style.css', rel='stylesheet')
   body
     div.ts-menu
@@ -17,9 +17,9 @@ html(lang="en")
     div#home.ts-slide(class={ 'ts-slide-active': page == 'home' })
       div#home-hero
       div.ts-slide-content
-        div.ts-callout-home.lato
+        div.ts-callout-home
           span DIGITAL
-          span.lato-bold &nbsp;FREEDOM
+          span &nbsp;FREEDOM
           br
           span: small Expertise to turn exceptional ideas into elegant code
 
@@ -31,15 +31,28 @@ html(lang="en")
     div#work.ts-slide(class={ 'ts-slide-active': page == 'work' })
       div.ts-slide-navbar
       div.ts-slide-content.ts-work-splash
-        div.ts-callout-dark.lato
+        //div.ts-callout-dark
           span CREATIVE
-          span.lato-bold &nbsp;SOLUTIONS
+          span &nbsp;SOLUTIONS
           br
           small
             span A diverse skillset and trademark adaptability.
             br
             br
-            a(href='#browse') See them in action
+            a(href='#browse') See them in action &rarr;
+        //div.ts-callout-work
+          span CREATIVE
+          span &nbsp;SOLUTIONS
+          br
+          span: small A diverse skillset and trademark adaptability.
+          br
+          small: a(href='#browse') Learn more &rarr;
+        div.ts-callout-work
+          span A diverse skillset for building
+          br
+          span interactive experiences.
+          br
+          small: a.ts-action-button(href='#browse') CHECK OUT SOME OF MY WORK &rarr;
       each blurb, id in content.work
         div.ts-work-content(id=id)
           div.ts-work-visual
@@ -59,15 +72,19 @@ html(lang="en")
     div#contact.ts-slide(class={ 'ts-slide-active': page == 'contact' })
       div.ts-slide-navbar
       div.ts-slide-content
-        form(method='POST', action='/contact/send')
-          label(for='name') Your Name
-          input(type='text', name='name')
+        form.ts-contact-form(method='POST', action='/contact/send')
+          h1 Contact me
+          p I would love to hear from you!
 
-          label(for='email') Return Address
-          input(type='text', name='email')
+          div.ts-contact-fields
+            label(for='name') Your Name
+            input(type='text', name='name', placeholder="Your Name")
 
-          label(for='message') Message
-          textarea(name='message')
+            label(for='email') Return Address
+            input(type='text', name='email', placeholder="Return Address")
+
+            label(for='message') Message
+            textarea(name='message', placeholder='Your message here')
 
           input(type='submit', value='Send Message')
 
