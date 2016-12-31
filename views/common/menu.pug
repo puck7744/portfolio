@@ -1,0 +1,9 @@
+div.ts-menu
+  div.ts-brand
+    span Tristan Shelton
+    span: small= ' <developer>'
+  ul.ts-nav.lato
+    li: a(href='/', class={ 'ts-nav-active': page == 'home' }) Home
+    li: a(href='/about', class={ 'ts-nav-active': page == 'about' }) About
+    li: a(href='/work', class={ 'ts-nav-active': page == 'work' }) Work
+    li: a(href='/contact', class={ 'ts-nav-active': page == 'contact' }) Contact

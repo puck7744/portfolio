@@ -1,0 +1,9 @@
+div#about.ts-slide(class={ 'ts-slide-active': page == 'about' })
+  div.ts-slide-content
+    div.ts-callout-about
+      span A diverse skillset for building
+      br
+      span interactive experiences.
+      br
+      small: a.ts-action-button(href='#more') LEARN MORE &rarr;
+    div#more.ts-page-bottom!= content.about

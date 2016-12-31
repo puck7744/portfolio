@@ -1,0 +1,25 @@
+div#work.ts-slide(class={ 'ts-slide-active': page == 'work' })
+  div.ts-slide-content
+    div.ts-callout-work
+      span A diverse skillset for building
+      br
+      span interactive experiences.
+      br
+      small: a.ts-action-button(href='#browse') LEARN MORE &rarr;
+  each blurb, id in content.work
+    div.ts-work-content(id=id)
+      div.ts-work-visual
+        img(src=`/img/work/full/${id}.jpg`)
+      div.ts-work-info
+        div.ts-work-subnav
+          ul
+            li: a(href='#wendy-kagan') &larr; Previous
+            li: a(href='#browse') &uarr; Gallery
+            li: a(href='#something-fabulous') Next &rarr;
+        != blurb
+  div.ts-work-nav#browse
+    ul
+      each blurb, id in content.work
+        li: a(href='#'+id)
+          img(src=`/img/work/thumb/${id}.jpg`)
+          span= id.replace(/-/g, ' ').replace(/\w+\s*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); })
