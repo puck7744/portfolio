@@ -3,6 +3,20 @@
   background-size: cover;
 }
 
+#more {
+  top: 100%;
+
+  &:target {
+    top: $menu-height * 2;
+  }
+
+  img {
+    float: right;
+    margin: 1em;
+    @include border-radius(50%);
+  }
+}
+
 .ts-callout-about {
   @extend .ts-callout;
   @extend .montserrat;
