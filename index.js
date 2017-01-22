@@ -15,7 +15,9 @@ app.set('views', 'views');
 app.set('view engine', 'pug');
 app.use(express.static('public'));
 app.use(favicon('public/favicon.ico'));
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({
+   extended: false
+}));
 
 /*
  * Handle submission and verification of the contact form
@@ -37,7 +39,7 @@ app.post(
       });
     }
 
-    app.next();
+    response.redirect('/?fpostsub=true');
   }
 );
 
@@ -54,6 +56,6 @@ app.get(['/', '/:page'], function(request, response) {
       work: workEntries
     }
   });
-})
+});
 
 app.listen(app.get('port'));

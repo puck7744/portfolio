@@ -13,6 +13,8 @@
   @include box-shadow();
 
   @include placeholder {
+    color: $black;
+    opacity: 0.5;
     font-weight: bold;
   }
 
