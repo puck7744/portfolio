@@ -22,4 +22,4 @@ div#work.ts-slide(class={ 'ts-slide-active': page == 'work' })
       each blurb, id in content.work
         li: a(href='#'+id)
           img(src=`/img/work/thumb/${id}.jpg`)
-          span= id.replace(/-/g, ' ').replace(/\w+\s*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); })
+          span: b= id.replace(/-/g, ' ').replace(/\w+\s*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); })
