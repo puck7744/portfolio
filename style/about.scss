@@ -38,4 +38,12 @@
   @include transform(translateX(-50%));
   background: $background;
   overflow: auto;
+
+  .ts-close {
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    color: $black;
+  }
 }

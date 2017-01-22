@@ -1,5 +1,5 @@
 #contact {
-  background: url(../img/contact.jpg) no-repeat;
+  background: url(../img/contact2.jpg) no-repeat;
   background-size: cover;
 }
 
@@ -11,6 +11,10 @@
   overflow: auto;
   @include border-radius();
   @include box-shadow();
+
+  @include placeholder {
+    font-weight: bold;
+  }
 
   h1, p {
     @extend .open-sans;
@@ -54,6 +58,7 @@
     padding: 0.8em 2em;
     font-weight: 600;
     @include border-radius();
+    @include box-shadow();
 
     &:hover {
       cursor: pointer;
