@@ -13,7 +13,7 @@ $black: #222;
 $primary: #172D6D;
 $secondary: lighten($primary, 50%);
 $highlight: #FFBB00;
-$background: #eee;
+$background: $white;
 
 @import 'common';
 @import 'home';

@@ -13,8 +13,8 @@
   @include box-shadow();
 
   @include placeholder {
-    color: $black;
-    opacity: 0.5;
+    color: darken($background, 30%);
+    opacity: 1;
     font-weight: bold;
   }
 
@@ -27,7 +27,7 @@
   }
 
   .ts-contact-fields, input[type=text] {
-    border: 2px solid darken($background, 20%);
+    border: 2px solid darken($background, 30%);
   }
 
   input[type=text], input[type=submit], textarea {
@@ -38,8 +38,8 @@
   input[type=text], textarea {
     width: 100%;
     padding: 0.8em;
-    border-bottom: 2px solid darken($background, 20%);
-    background: $background;
+    border-bottom: 1px dashed darken($background, 30%);
+    background: darken($background, 3%);
     &:focus {
       background: $white;
     }
