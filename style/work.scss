@@ -134,7 +134,8 @@
 
     ul {
       @extend .horizontal-navigation;
-      li {
+      li a {
+        display: inline-block;
         color: $white;
         padding: 0.8em;
       }
