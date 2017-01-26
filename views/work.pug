@@ -1,25 +1,15 @@
 div#work.ts-slide(class={ 'ts-slide-active': page == 'work' })
-  div.ts-slide-content
-    div.ts-callout-work
-      span A diverse skillset for building
-      br
-      span interactive experiences.
-      br
-      small: a.ts-action-button(href='#browse') LEARN MORE &rarr;
   each entry in content.work
     div.ts-work-content(id=entry.id)
       div.ts-work-visual
-        img(src=`/img/work/full/${entry.id}.jpg`)
+        div.ts-work-browser
+          div.ts-work-titlebar
+            span X
+            span
+            span &ndash;
+          img(src=`/img/work/full/${entry.id}.jpg`)
+        div.ts-work-shadow
       div.ts-work-info
-        div.ts-work-subnav
-          ul
-            li: a(href=`#${entry.previous}`) &larr; Previous
-            li: a(href='#browse') &uarr; Gallery
-            li: a(href=`#${entry.next}`) Next &rarr;
-        != entry.blurb
-  div.ts-work-nav#browse
-    ul
-      each entry in content.work
-        li: a(href='#'+entry.id)
-          img(src=`/img/work/thumb/${entry.id}.jpg`)
-          span: b= entry.title
+          != entry.blurb
+      div.ts-work-prev: a(href=`#${entry.previous}`)
+      div.ts-work-next: a(href=`#${entry.next}`)

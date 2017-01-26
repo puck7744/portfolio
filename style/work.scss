@@ -1,4 +1,5 @@
 #work {
+  //Gradient header
   &:before {
     content: '';
     position: fixed;
@@ -7,138 +8,147 @@
     width: 100%;
     height: $menu-height;
     background: $primary;
+    @include background-gradient($primary, lighten($primary, 5%));
   }
 }
 
-.ts-work-visual, .ts-work-info, .ts-work-nav {
+//Main content area
+.ts-work-content {
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  overflow: auto;
-  box-sizing: border-box;
-}
-
-.ts-work-visual {
-  left: 0;
-  width: 50%;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-  }
-}
-
-.ts-work-info {
-  left: 50%;
-  width: 50%;
-  padding: 5em 3em 3em;
-  background: $white;
-  border-left: 8px solid $black;
-
-  h1 {
-    margin-top: 0;
-  }
-  p, ul {
-    width: 420px;
-    box-sizing: border-box;
-  }
-}
-
-.ts-work-nav {
   top: $menu-height;
+  left: 0;
   right: 0;
   bottom: 0;
-  overflow: auto;
-  background: $background;
 
-  ul {
-    width: 100%;
-    padding: 2%;
+  //Common styles for both halfs of an entry
+  .ts-work-visual, .ts-work-info {
+    position: absolute;
+    top: 50%;
+    width: 25%;
+    opacity: 0;
+  }
 
-    li {
-      position: relative;
-      display: inline-block;
-      list-style: none;
-      width: 17%;
-      padding-top: 17%;
-      margin: 1%;
-      @include box-sizing();
+  //Image half
+  .ts-work-visual {
+    right: 50%;
+    margin-right: 2em;
+    //Vertically center, then add perspective
+    @include transform(translateY(-50%) perspective(600px) rotateY(15deg));
+
+    .ts-work-browser {
+      height: 0;
+      padding-bottom: 120%;
+      background: #fff;
+      border: 4px solid darken($background, 40%);
       overflow: hidden;
-      background: $black;
-      border: 1px solid $black;
+
+      .ts-work-titlebar {
+        height: 1.2em;
+        background: darken($background, 40%);
+
+        span {
+          display: block;
+          float: right;
+          width: 0.8em;
+          line-height: 1.2em;
+          color: $background;
+          margin-left: 0.5em;
+          @include box-sizing();
+        }
+
+        span:nth-child(2) {
+          height: 0.8em;
+          line-height: 0.8em;
+          margin-top: 0.1em;
+          border: 1px solid $background;
+          border-top: 3px solid $background;
+        }
+      }
 
       img {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        height: 100%;
-        opacity: 1;
-        @include transition();
-        @include transform(translateX(-50%));
-      }
-
-      span {
-        display: block;
-        overflow: hidden;
-        position: absolute;
-        top: 40%;
         width: 100%;
-        line-height: 2.8em;
-        color: $white;
-        text-align: center;
-        opacity: 0;
-        @include transform(translateY(-50%));
-        @include transition();
       }
+    }
+    .ts-work-shadow {
+      height: 10px;
+      background: transparent;
+      margin: -1em auto 3em;
+      @include border-radius(50%);
+      @include box-shadow(0, 3em, 30px, rgba(0, 0, 0, 0.5));
+    }
+  }
 
-      &:hover {
-        span {
-          top: 50%;
-          opacity: 1;
-        }
-        img {
-          opacity: 0.10;
-        }
+  //Text half
+  .ts-work-info {
+    left: 50%;
+    height: 70%;
+    margin-left: 2em;
+    overflow: auto;
+    @include transform(translateY(-50%));
+    z-index: 0;
+  }
+
+  .ts-work-prev, .ts-work-next {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -1em;
+
+    a {
+      padding: 2em 1em;
+      background: darken($background, 25%);
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 12px solid transparent;
       }
     }
   }
-}
 
-.ts-work-content {
-  position: fixed;
-  top: $menu-height;
-  left: 100%;
-  right: auto;
-  width: 100%;
-  bottom: 0;
-  z-index: 50;
-
-  &:target {
+  .ts-work-prev {
     left: 0;
-    z-index: 60;
-  }
 
-  a {
-    color: $primary;
+    a:after {
+      border-right: 12px solid lighten($black, 20%);
+      margin: -12px 0 0 -20px;
+    }
   }
-
-  .ts-work-subnav {
-    position: absolute;
-    top: 0;
+  .ts-work-next {
     right: 0;
-    width: 100%;
-    color: $white;
-    background: $black;
 
-    ul {
-      @extend .horizontal-navigation;
-      li a {
-        display: inline-block;
-        color: $white;
-        padding: 0.8em;
-      }
+    a:after {
+      border-left: 12px solid lighten($black, 20%);
+      margin: -12px 0 0 -4px;
+    }
+  }
+
+  //As a last resort show the last entry when there is no target
+  &:target, &:last-child {
+    z-index: 60;
+
+    .ts-work-visual, .ts-work-info {
+      opacity: 1;
+    }
+
+    .ts-work-next, .ts-work-prev {
+      display: block;
+    }
+  }
+
+  //Hide the last entry when there is a target
+  &:target ~ &:last-child {
+    z-index: 0;
+
+    .ts-work-visual, .ts-work-info {
+      opacity: 0;
+    }
+
+    .ts-work-next, .ts-work-prev {
+      display: none;
     }
   }
 }
