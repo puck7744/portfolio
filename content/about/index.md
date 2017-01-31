@@ -1,12 +1,18 @@
-# About Me
+# Hi,
 
-![](http://placehold.it/200x200)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ornare massa at nunc rutrum, sed scelerisque magna dapibus. Nunc consectetur libero a lorem iaculis, at auctor mauris ultricies. Nullam mattis leo eget finibus rhoncus. Morbi at placerat dolor. In viverra vehicula ullamcorper. Sed ut felis vel justo venenatis bibendum. Sed arcu lorem, egestas sed ligula a, egestas rutrum augue. In leo turpis, volutpat tincidunt feugiat vel, dignissim ac enim. Vestibulum vehicula pellentesque felis non eleifend. Duis a suscipit nibh. Etiam eu tellus euismod, porttitor metus sed, accumsan arcu. Sed scelerisque, nunc ac ullamcorper hendrerit, orci orci lobortis dolor, non dignissim magna dolor eu erat. Sed non faucibus nisl. Nulla sed mattis sapien. Etiam augue metus, porttitor eu tristique at, pellentesque non metus.
+![](/img/tristan-shelton.jpg)
+my name is Tristan and I'm a freelance full stack web developer, UI designer and technical consultant. I specialize in concept implementation and CMS systems, but with over a decade of professional experience and a thirst for knowledge I can handle pretty much any project.
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pharetra lacus turpis, quis elementum tellus tempus et. Phasellus faucibus consectetur diam a tristique. Proin dui dolor, ornare in placerat ac, tristique sed nunc. Nam a consectetur odio, vel eleifend leo. Vestibulum tempus lacus vulputate erat placerat, in dignissim est iaculis. Nullam fringilla volutpat libero at mattis. In pretium leo ex, ullamcorper rutrum nulla malesuada vitae. Pellentesque varius in sapien eu fringilla. Nunc sapien nunc, iaculis sed aliquam vitae, dictum hendrerit nibh. Proin aliquam orci eu odio tempus mollis. Curabitur rhoncus aliquam leo id viverra. Duis turpis augue, tristique placerat felis eu, iaculis pellentesque quam. Vivamus eget magna nisl. Curabitur a lorem urna. Praesent volutpat luctus lorem sed tincidunt.
+Some of my past experience includes:
 
-Vivamus at leo hendrerit, tempor ex ut, gravida ante. Sed eleifend pulvinar dui, a tempus felis scelerisque vitae. Duis vitae tortor auctor eros sagittis egestas. Integer non magna ac est dapibus venenatis. Duis et rutrum nibh. Sed eu urna elit. Curabitur blandit consectetur risus.
+* Developing custom themes, plugins and modifiers for existing CMS systems (Wordpress, Joomla, Drupal, ....)
+* Mobile and desktop UI/UX design and implementation
+* AJAX-based single page UI development
+* Socket-level communications for web applications
+* Back end development using existing and custom frameworks
+* Design and implementation of RESTful APIs
+* Triage of server security breaches
+* Custom database design and large volume data handling
+* Technical consultation on framework and software solutions
 
-Donec auctor sagittis urna a iaculis. Maecenas mi libero, mattis auctor pretium vel, imperdiet quis diam. Donec eleifend sollicitudin pulvinar. Aliquam erat volutpat. Duis eu magna ex. Mauris molestie a eros vitae porta. Praesent pulvinar nisi ut mauris tempus, varius fringilla ex auctor. Curabitur laoreet turpis arcu, eu malesuada velit hendrerit sagittis. Ut tempus sed tortor sed condimentum. Quisque luctus nulla in aliquet mollis. Nullam condimentum, mauris nec laoreet sagittis, sapien nunc condimentum odio, ac lacinia eros odio vitae lectus. Donec sagittis dui non luctus dictum. Sed tincidunt, mi id semper euismod, ex leo malesuada sapien, non facilisis nunc ligula non libero. Etiam placerat neque ut tempor finibus. Morbi eget nibh vel orci vestibulum pellentesque et non justo. Pellentesque fringilla risus velit, eu euismod arcu consequat a.
-
-In et congue turpis. Donec non semper lorem. In hac habitasse platea dictumst. Integer sit amet pharetra turpis. Curabitur vulputate urna consequat magna consequat, sit amet lacinia nulla volutpat. Etiam rutrum lacinia risus sed efficitur. Nullam gravida feugiat odio nec auctor.
+If you're looking for a developer that can transform your project parameters into [clean code](https://github.com/puck7744/portfolio) with a low turn around time, [look no further](/contact).
