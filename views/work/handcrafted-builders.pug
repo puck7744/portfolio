@@ -1,7 +1,16 @@
-h1 Handcrafted Builders
+extends template.pug
 
-p Provided with a layered and annotated Photoshop file, I hand crafted an efficient and minimalistic theme for a standard Wordpress 4.1 installation.
+block setup
+  -
+    var entry = {
+      id: 'handcrafted-builders',
+      url: 'http://www.handcraftedbuilders.com/',
+      previous: 'bali-childrens-project',
+      next: 'stylo-furniture-design'
+    }
+block content
+  h1 Handcrafted Builders
 
-p Additional services provided with this standard deployment included server set up, security evaluation, plugin installation and content conversion.
+  p Provided with a layered and annotated Photoshop file, I hand crafted an efficient and minimalistic theme for a standard Wordpress 4.1 installation.
 
-a.ts-work-visit(href='http://www.handcraftedbuilders.com/') Visit Website
+  p Additional services provided with this standard deployment included server set up, security evaluation, plugin installation and content conversion.

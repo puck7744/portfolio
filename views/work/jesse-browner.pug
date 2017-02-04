@@ -1,7 +1,16 @@
-h1 Jesse Browner
+extends template.pug
 
-p Contracted to make an existing DreamWeaver based website mobile friendly, I used external tools to expand the existing style and function with modern responsive design principles while maintaining full compatibility with the original build tools.
+block setup
+  -
+    var entry = {
+      id: 'jesse-browner',
+      url: 'http://www.jessebrowner.com/',
+      previous: 'pidcock-coaching-partners',
+      next: 'wendy-kagan'
+    }
+block content
+  h1 Jesse Browner
 
-p Using minimal structural changes and modular CSS3 I was able to provide the client with a fully functional responsive presentational and navigational systems that retroactively adapted all existing content.
+  p Contracted to make an existing DreamWeaver based website mobile friendly, I used external tools to expand the existing style and function with modern responsive design principles while maintaining full compatibility with the original build tools.
 
-a.ts-work-visit(href='http://www.jessebrowner.com/') Visit Website
+  p Using minimal structural changes and modular CSS3 I was able to provide the client with a fully functional responsive presentational and navigational systems that retroactively adapted all existing content.

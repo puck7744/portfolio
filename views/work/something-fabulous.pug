@@ -1,5 +1,14 @@
-h1 Something Fabulous
+extends template.pug
 
-p I provided supplementary programming and server management services to an external design team for an existing Wordpress-based website. Services rendered included security evaluation, restoration of damaged databases and migration/reconstruction of content across multiple servers.
+block setup
+  -
+    var entry = {
+      id: 'something-fabulous',
+      url: 'http://www.somethingfab.com/',
+      previous: 'jet-blue',
+      next: 'rondout-valley-growers'
+    }
+block content
+  h1 Something Fabulous
 
-a.ts-work-visit(href='http://www.somethingfab.com/') Visit Website
+  p I provided supplementary programming and server management services to an external design team for an existing Wordpress-based website. Services rendered included security evaluation, restoration of damaged databases and migration/reconstruction of content across multiple servers.

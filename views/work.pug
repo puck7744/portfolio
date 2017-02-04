@@ -1,15 +1,12 @@
 div#work.ts-slide(class={ 'ts-slide-active': page == 'work' })
-  each entry in content.work
-    div.ts-work-content(id=entry.id)
-      div.ts-work-visual
-        div.ts-work-browser
-          div.ts-work-titlebar
-            span X
-            span
-            span &ndash;
-          img(src=`/img/work/full/${entry.id}.jpg`)
-        div.ts-work-shadow
-      div.ts-work-info
-          != entry.blurb
-      div.ts-work-prev: a(href=`#${entry.previous}`)
-      div.ts-work-next: a(href=`#${entry.next}`)
+  include work/something-fabulous.pug
+  include work/rondout-valley-growers.pug
+  include work/a-natural-chef.pug
+  include work/den-of-marbletown.pug
+  include work/bali-childrens-project.pug
+  include work/handcrafted-builders.pug
+  include work/stylo-furniture-design.pug
+  include work/pidcock-coaching-partners.pug
+  include work/jesse-browner.pug
+  include work/wendy-kagan.pug
+  include work/jet-blue.pug
