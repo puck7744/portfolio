@@ -3,8 +3,12 @@ body {
 }
 
 a {
-  color: $highlight;
+  color: $primary;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .horizontal-navigation {
@@ -91,6 +95,10 @@ p, li {
 
       a {
         font-size: 28px;
+
+        &:hover {
+          text-decoration: none;
+        }
 
         &:after {
           content: '';
