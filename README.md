@@ -3,7 +3,7 @@ I am a web developer and technical consultant based out of the Harrisburg, PA ar
 
 # Features
 ## Low Overhead
-With a 75 line main script file and only a handful of server-side dependencies, the project requires very little of the server. Client-side resources are pre-compiled and minified to minimize bandwidth usage and loading time.
+With a 52 line main script file and only a handful of server-side dependencies, the project requires very little of the server. Client-side resources are pre-compiled and minified to minimize bandwidth usage and loading time.
 
 ## 3D Rendering
 The home page uses a WebGL context (via Three.js) to display some fluffy scrolling clouds and abstract flocking birds where supported.

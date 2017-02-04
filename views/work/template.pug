@@ -1,0 +1,15 @@
+block setup
+div.ts-work-content(id=entry.id)
+  div.ts-work-visual
+    div.ts-work-browser
+      div.ts-work-titlebar
+        span X
+        span
+        span &ndash;
+      img(src=`/img/work/full/${entry.id}.jpg`)
+    div.ts-work-shadow
+  div.ts-work-info
+    block content
+    a.ts-work-visit(href=entry.url) Visit Website
+  div.ts-work-prev: a(href=`#${entry.previous}`)
+  div.ts-work-next: a(href=`#${entry.next}`)

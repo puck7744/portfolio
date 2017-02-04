@@ -44,30 +44,8 @@ app.post(
 );
 
 app.get(['/', '/:page'], function(request, response) {
-  var workEntries = {};
-  var files = fs.readdirSync('content/work');
-
-  files.forEach((file, index) => {
-    var workId = path.basename(file, path.extname(file));
-    var workTitle = workId.replace(/-/g, ' ').replace(/\w+\s*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
-    var prevFile = (index == 0 ? files[files.length-1] : files[index-1]);
-    var nextFile = (index == files.length-1 ? files[0] : files[index+1])
-
-    workEntries[workId] = {
-      id: workId,
-      title: workTitle,
-      blurb: marked(fs.readFileSync('content/work/'+file, 'utf8')),
-      previous: path.basename(prevFile, path.extname(prevFile)),
-      next: path.basename(nextFile, path.extname(nextFile))
-    }
-  });
-
   response.render('index', {
-    page: request.params.page||'home',
-    content: {
-      about: marked(fs.readFileSync('content/about/index.md', 'utf8')),
-      work: workEntries
-    }
+    page: request.params.page||'home'
   });
 });
 
