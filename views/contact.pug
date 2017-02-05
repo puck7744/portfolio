@@ -4,14 +4,14 @@ div#contact.ts-slide(class={ 'ts-slide-active': page == 'contact' })
       h1 Contact me
       p I would love to hear from you!
 
-      div.ts-contact-fields
-        label(for='name') Your Name
-        input(type='text', name='name', placeholder="Your Name")
-
-        label(for='email') Return Address
-        input(type='text', name='email', placeholder="Return Address")
-
-        label(for='message') Message
-        textarea(name='message', placeholder='Your message here')
+      div.ts-form-group
+        input(type='text', name='name', required='required')
+        label(for='name') Name
+      div.ts-form-group
+        input(type='text', name='email', required='required')
+        label(for='email') Email Address
+      div.ts-form-group
+        textarea(name='message', required='required')
+        label(for='message') Your Message
 
       input(type='submit', value='Send Message')

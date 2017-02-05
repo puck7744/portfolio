@@ -7,49 +7,67 @@
   width: 700px;
   margin: 4em;
   padding: 2em;
-  background: $background;
+  background: $white;
   overflow: auto;
   @include border-radius();
-  @include box-shadow();
-
-  @include placeholder {
-    color: darken($background, 30%);
-    opacity: 1;
-    font-weight: bold;
-  }
 
   h1, p {
     @extend .open-sans;
   }
 
-  label {
-    display: none;
+  .ts-form-group {
+    position: relative;
+    margin: 1em 0;
+    padding-top: 1em;
   }
 
-  .ts-contact-fields, input[type=text] {
-    border: 2px solid darken($background, 30%);
+  label {
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    z-index: 10;
+    @include transition(all 0.2s ease-out);
+  }
+
+  input[type=text] ~ label {
+    left: 0em;
+  }
+
+  input:focus ~ label, input:valid ~ label, textarea:focus ~ label, textarea:valid ~ label {
+    font-size: 10pt;
+    color: $primary;
+    top: 0;
+    left: 0;
   }
 
   input[type=text], input[type=submit], textarea {
     @extend .open-sans;
+    position: relative;
+    z-index: 15;
     border-width: 0;
   }
 
   input[type=text], textarea {
     width: 100%;
-    padding: 0.8em;
-    border-bottom: 1px dashed darken($background, 30%);
-    background: darken($background, 3%);
+    height: 2.6em;
+    border-bottom: 1px solid $black;
+    background: transparent;
+
     &:focus {
-      background: $white;
+      outline: none;
+      border-bottom: 3px solid $primary;
     }
   }
 
   textarea {
     height: 8em;
     line-height: 1.2em;
-    border-bottom: none;
+    border: 1px solid $black;
     resize: vertical;
+
+    &:focus {
+      border: 2px solid $primary;
+    }
   }
 
   input[type=submit] {
@@ -60,10 +78,10 @@
     padding: 0.8em 2em;
     font-weight: 600;
     @include border-radius();
-    @include box-shadow();
 
     &:hover {
       cursor: pointer;
+      background: lighten($highlight, 10%);
     }
   }
 }
