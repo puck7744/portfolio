@@ -18,7 +18,7 @@ function init() {
 
   // Enable history API hook
   window.addEventListener('popstate', function(e) {
-    loadPage(e.state.page, false);
+    Util.loadPage(e.state.page, false);
   });
 
   // Prepare home page animation
