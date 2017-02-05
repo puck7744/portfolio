@@ -53,7 +53,8 @@ p, li, h1, h2 {
 }
 
 p, li {
-  font-size: 18px;
+  font-size: 14pt;
+  line-height: 1.2em;
 }
 
 // Main menu styles
@@ -92,6 +93,7 @@ p, li {
       @extend .open-sans;
       color: $white;
       margin-left: 1.5em;
+      line-height: $menu-height;
 
       a {
         font-size: 28px;
