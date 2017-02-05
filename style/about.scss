@@ -25,13 +25,6 @@
   background: rgba($white, 0.9);
   overflow: auto;
 
-  p, li {
-    font-size: 14pt;
-    line-height: 1.2em;
-  }
-  li {
-    margin-bottom: 0.5em;
-  }
   img {
     float: right;
     @include border-radius(50%);

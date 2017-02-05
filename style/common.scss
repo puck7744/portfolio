@@ -57,6 +57,10 @@ p, li {
   line-height: 1.2em;
 }
 
+li {
+  margin-bottom: 0.5em;
+}
+
 // Main menu styles
 .ts-menu {
   @extend .open-sans;

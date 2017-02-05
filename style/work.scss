@@ -92,6 +92,7 @@
       font-size: 120%;
       background: $highlight;
       padding: 0.5em 2.5em;
+      margin-top: 1em;
       @include border-radius();
 
       &:hover {
@@ -145,6 +146,7 @@
 
     .ts-work-visual, .ts-work-info {
       opacity: 1;
+      animation: ts-work-in;
     }
 
     .ts-work-next, .ts-work-prev {
@@ -163,5 +165,70 @@
     .ts-work-next, .ts-work-prev {
       display: none;
     }
+  }
+
+  // Animations
+  &:not(:target) {
+    .ts-work-visual {
+      animation: ts-carousel-out-r 0.7s 1;
+    }
+
+    .ts-work-info {
+      animation: ts-slide-out 0.7s 1;
+    }
+  }
+
+  &:target {
+    .ts-work-visual {
+      animation: ts-carousel-in-r 0.7s 1;
+    }
+
+    .ts-work-info {
+      animation: ts-slide-in 0.7s 1;
+    }
+  }
+}
+
+@keyframes ts-carousel-out-r {
+  from {
+    @include transform(translateY(-50%) perspective(600px) translate3d(0, 0, 0) rotateY(15deg));
+    @include opacity(1);
+  }
+  to {
+    @include transform(translateY(-50%) perspective(600px) translate3d(75%, 0, -100px) rotateY(7deg));
+    @include opacity(0);
+  }
+}
+
+@keyframes ts-carousel-in-r {
+  from {
+    @include transform(translateY(-50%) perspective(600px) translate3d(-50%, 0, 150px) rotateY(27deg));
+    @include opacity(0);
+  }
+  to {
+    @include transform(translateY(-50%) perspective(600px) translate3d(0, 0, 0) rotateY(15deg));
+    @include opacity(1);
+  }
+}
+
+@keyframes ts-slide-out {
+  from {
+    @include transform(translateY(-50%));
+    @include opacity(1);
+  }
+  to {
+    @include transform(translateY(-30%));
+    @include opacity(0);
+  }
+}
+
+@keyframes ts-slide-in {
+  from {
+    @include transform(translateY(-70%));
+    @include opacity(0);
+  }
+  to {
+    @include transform(translateY(-50%));
+    @include opacity(1);
   }
 }
