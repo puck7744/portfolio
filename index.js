@@ -1,22 +1,22 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
-var marked = require('marked');
 var sendmail = require('sendmail');
 var form = require('express-form');
 var fs = require('fs');
 var path = require('path');
 
 var app = express();
-var field = form.field;
+var field = form.field; // Shorthand for using express-form
 
+// Set up Express environment
 app.set('port', (process.env.PORT || 5000));
 app.set('views', 'views');
 app.set('view engine', 'pug');
 app.use(express.static('public'));
 app.use(favicon('public/favicon.ico'));
 app.use(bodyParser.urlencoded({
-   extended: false
+  extended: false.
 }));
 
 /*
@@ -43,10 +43,12 @@ app.post(
   }
 );
 
+// Handle rendering of the main pages
 app.get(['/', '/:page'], function(request, response) {
   response.render('index', {
     page: request.params.page||'home'
   });
 });
 
+// Start the app
 app.listen(app.get('port'));
