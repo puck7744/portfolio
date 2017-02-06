@@ -146,7 +146,6 @@
 
     .ts-work-visual, .ts-work-info {
       opacity: 1;
-      animation: ts-work-in;
     }
 
     .ts-work-next, .ts-work-prev {
@@ -170,7 +169,7 @@
   // Animations
   &:not(:target) {
     .ts-work-visual {
-      animation: ts-carousel-out-r 0.7s 1;
+      animation: ts-carousel-out-r 0.5s 1 ease-in;
     }
 
     .ts-work-info {
@@ -180,7 +179,7 @@
 
   &:target {
     .ts-work-visual {
-      animation: ts-carousel-in-r 0.7s 1;
+      animation: ts-carousel-in-r 0.7s 1 ease-out;
     }
 
     .ts-work-info {
@@ -195,7 +194,7 @@
     @include opacity(1);
   }
   to {
-    @include transform(translateY(-50%) perspective(600px) translate3d(75%, 0, -100px) rotateY(7deg));
+    @include transform(translateY(-50%) perspective(600px) translate3d(50%, 0, -60px) rotateY(12deg));
     @include opacity(0);
   }
 }
